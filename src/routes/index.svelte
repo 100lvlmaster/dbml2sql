@@ -1,5 +1,5 @@
 <script lang="ts">
-	import Container from 'src/components/container.svelte';
+	import Container from '$lib';
 	import { onMount } from 'svelte';
 
 	onMount(() => {
