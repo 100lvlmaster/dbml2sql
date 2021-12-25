@@ -31,6 +31,10 @@ dependencies:
   react: 17.0.2
   react-codemirror2: 7.2.1_codemirror@5.65.0+react@17.0.2
   react-dom: 17.0.2_react@17.0.2
+<<<<<<< HEAD
+=======
+  zustand: 3.6.8_react@17.0.2
+>>>>>>> 851004f (remove: react-redux)
 
 devDependencies:
   '@types/node': 16.11.12
