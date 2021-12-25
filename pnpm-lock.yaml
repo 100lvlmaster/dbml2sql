@@ -17,7 +17,6 @@ specifiers:
   react: 17.0.2
   react-codemirror2: ^7.2.1
   react-dom: 17.0.2
-  react-redux: ^7.2.6
   typescript: 4.5.2
   zustand: ^3.6.8
 
@@ -33,7 +32,6 @@ dependencies:
   react: 17.0.2
   react-codemirror2: 7.2.1_codemirror@5.65.0+react@17.0.2
   react-dom: 17.0.2_react@17.0.2
-  react-redux: 7.2.6_react-dom@17.0.2+react@17.0.2
   zustand: 3.6.8_react@17.0.2
 
 devDependencies:
@@ -1343,6 +1341,7 @@ packages:
     dependencies:
       '@types/react': 17.0.37
       hoist-non-react-statics: 3.3.2
+    dev: true
 
   /@types/json5/0.0.29:
     resolution: {integrity: sha1-7ihweulOEdK4J7y+UnC86n8+ce4=}
@@ -1375,6 +1374,7 @@ packages:
       '@types/react': 17.0.37
       hoist-non-react-statics: 3.3.2
       redux: 4.1.2
+    dev: true
 
   /@types/react/17.0.37:
     resolution: {integrity: sha512-2FS1oTqBGcH/s0E+CjrCCR9+JMpsu9b69RTFO+40ua43ZqP5MmQ4iUde/dMjWR909KxZwmOQIFq6AV6NjEG5xg==}
@@ -3599,28 +3599,6 @@ packages:
     resolution: {integrity: sha512-w2GsyukL62IJnlaff/nRegPQR94C/XXamvMWmSHRJ4y7Ts/4ocGRmTHvOs8PSE6pB3dWOrD/nueuU5sduBsQ4w==}
     dev: false
 
-  /react-redux/7.2.6_react-dom@17.0.2+react@17.0.2:
-    resolution: {integrity: sha512-10RPdsz0UUrRL1NZE0ejTkucnclYSgXp5q+tB5SWx2qeG2ZJQJyymgAhwKy73yiL/13btfB6fPr+rgbMAaZIAQ==}
-    peerDependencies:
-      react: ^16.8.3 || ^17
-      react-dom: '*'
-      react-native: '*'
-    peerDependenciesMeta:
-      react-dom:
-        optional: true
-      react-native:
-        optional: true
-    dependencies:
-      '@babel/runtime': 7.16.3
-      '@types/react-redux': 7.1.20
-      hoist-non-react-statics: 3.3.2
-      loose-envify: 1.4.0
-      prop-types: 15.7.2
-      react: 17.0.2
-      react-dom: 17.0.2_react@17.0.2
-      react-is: 17.0.2
-    dev: false
-
   /react-refresh/0.8.3:
     resolution: {integrity: sha512-X8jZHc7nCMjaCqoU+V2I0cOhNW+QMBwSUkeXnTi8IPe6zaRWfn60ZzvFDZqWPfmSJfjub7dDW1SP0jaHWLu/hg==}
     engines: {node: '>=0.10.0'}
@@ -3706,6 +3684,7 @@ packages:
     resolution: {integrity: sha512-SH8PglcebESbd/shgf6mii6EIoRM0zrQyjcuQ+ojmfxjTtE0z9Y8pa62iA/OJ58qjP6j27uyW4kUF4jl/jd6sw==}
     dependencies:
       '@babel/runtime': 7.16.3
+    dev: true
 
   /regenerator-runtime/0.13.4:
     resolution: {integrity: sha512-plpwicqEzfEyTQohIKktWigcLzmNStMGwbOUbykx51/29Z3JOGYldaaNGK7ngNXV+UcoqvIMmloZ48Sr74sd+g==}
