@@ -1,41 +1,17 @@
+import { ChevronDownIcon } from "@chakra-ui/icons";
 import {
+  Button,
+  Flex,
   Menu,
   MenuButton,
-  MenuList,
   MenuItem,
-  Flex,
-  Text,
-  Button,
+  MenuList,
   Spacer,
+  Text,
 } from "@chakra-ui/react";
-import { ChevronDownIcon } from "@chakra-ui/icons";
 import { options } from "../lib/options";
-import { ConvertOption } from "../lib/types";
-import { useConvertOptions } from "../store/options";
-interface Props {
-  onSelectImport: (e: ConvertOption) => void;
-  onSelectExport: (e: ConvertOption) => void;
-}
 
-const NavBar = ({ onSelectExport, onSelectImport }: Props) => {
-  ///
-  const [importOption, exportOption, setImportOption, setExportOption] =
-    useConvertOptions((state) => [
-      state.import,
-      state.export,
-      state.setImportFrom,
-      state.setExportFrom,
-    ]);
-  ///
-  const handleImportChange = (e: ConvertOption) => {
-    setImportOption(e);
-    onSelectImport(e);
-  };
-  ///
-  const onExportChange = (e: ConvertOption) => {
-    setExportOption(e);
-    onSelectExport(e);
-  };
+const NavBar = () => {
   return (
     <Flex
       flexDir="row"
@@ -46,13 +22,13 @@ const NavBar = ({ onSelectExport, onSelectImport }: Props) => {
     >
       <Text color="white">Import type</Text>
       <Menu>
-        <MenuButton as={Button} rightIcon={<ChevronDownIcon />}>
-          {importOption.title}
+        <MenuButton zIndex={999} as={Button} rightIcon={<ChevronDownIcon />}>
+          {"SQL"}
         </MenuButton>
-        <MenuList>
+        <MenuList zIndex={999}>
           {options.map((e, i) => (
             <MenuItem
-              onClick={() => handleImportChange(e)}
+              // onClick={() => handleImportChange(e)}
               key={`${e}-${i}`}
               value={e.value}
             >
@@ -65,13 +41,13 @@ const NavBar = ({ onSelectExport, onSelectImport }: Props) => {
       <Text color="white">Export type</Text>
       <Text>
         <Menu>
-          <MenuButton as={Button} rightIcon={<ChevronDownIcon />}>
-            {exportOption.title}
+          <MenuButton zIndex={999} as={Button} rightIcon={<ChevronDownIcon />}>
+            {"SQL"}
           </MenuButton>
-          <MenuList>
+          <MenuList zIndex={999}>
             {options.map((e, i) => (
               <MenuItem
-                onClick={() => onExportChange(e)}
+                // onClick={() => onExportChange(e)}
                 key={`${e}-${i}`}
                 value={e.value}
               >

@@ -18,7 +18,6 @@ specifiers:
   react-codemirror2: ^7.2.1
   react-dom: 17.0.2
   typescript: 4.5.2
-  zustand: ^3.6.8
 
 dependencies:
   '@chakra-ui/icons': 1.1.1_react@17.0.2
@@ -32,7 +31,6 @@ dependencies:
   react: 17.0.2
   react-codemirror2: 7.2.1_codemirror@5.65.0+react@17.0.2
   react-dom: 17.0.2_react@17.0.2
-  zustand: 3.6.8_react@17.0.2
 
 devDependencies:
   '@types/node': 16.11.12
@@ -4245,16 +4243,4 @@ packages:
   /yocto-queue/0.1.0:
     resolution: {integrity: sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q==}
     engines: {node: '>=10'}
-    dev: false
-
-  /zustand/3.6.8_react@17.0.2:
-    resolution: {integrity: sha512-8dqxig1l/o/N4M3DGxhweLVyCvNsd40oU3fXuY4MfqX1notavmjljCnSeTN3FGfYzbo963w4un2ChYsPB/0gKA==}
-    engines: {node: '>=12.7.0'}
-    peerDependencies:
-      react: '>=16.8'
-    peerDependenciesMeta:
-      react:
-        optional: true
-    dependencies:
-      react: 17.0.2
     dev: false
