@@ -6,15 +6,10 @@ export interface ConvertOption {
 export interface EditorState {
   editorText: string;
   previewText: string;
-  import: ConvertOption;
-  export: ConvertOption;
+  importAs: ConvertOption;
+  exportAs: ConvertOption;
   setEditorText: (text: string) => void;
   setPreviewText: (text: string) => void;
   setImportFrom: (option: ConvertOption) => void;
   setExportFrom: (option: ConvertOption) => void;
-}
-
-export interface ConverterOption {
-  from: ConvertOption;
-  to: ConvertOption;
 }

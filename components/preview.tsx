@@ -1,22 +1,23 @@
-import { Box } from "@chakra-ui/react";
 import { Controlled as CodeMirror } from "react-codemirror2";
 import { useEditor } from "../store/editor";
 
 const Preview = () => {
-  const value = useEditor((state) => state.previewText);
+  const [previewText, exportAs] = useEditor((state) => [
+    state.previewText,
+    state.exportAs,
+  ]);
   return (
-    <Box height={"100%"} width={"50%"}>
-      <CodeMirror
-        value={value}
-        options={{
-          viewportMargin: Infinity,
-          mode: "json",
-          lineNumbers: true,
-        }}
-        onBeforeChange={(editor, data, value) => {}}
-        onChange={(editor, data, value) => {}}
-      />
-    </Box>
+    <CodeMirror
+      value={previewText}
+      options={{
+        lineWrapping: true,
+        mode: exportAs.value,
+        lineNumbers: true,
+        readOnly: true,
+      }}
+      onBeforeChange={(editor, data, value) => {}}
+      onChange={(editor, data, value) => {}}
+    />
   );
 };
 

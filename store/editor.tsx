@@ -1,27 +1,8 @@
-// export const useEditor = create<EditorState>((set) => ({
-//   import: options[2],
-//   export: options[1],
-//   editorText: editorText,
-//   previewText: "",
-//   setExportFrom: (option: ConvertOption) =>
-//     set((state) => {
-//       state.export = option;
-//     }),
-//   setImportFrom: (option: ConvertOption) =>
-//     set((state) => {
-//       state.import = option;
-//     }),
-//   setPreviewText: (text: string) =>
-//     set((state) => {
-//       state.previewText = text;
-//     }),
-//   setEditorText: (text: string) =>
-//     set((state) => {
-//       state.editorText = text;
-//     }),
-// }));
+import create from "zustand";
+import { options } from "../lib/options";
+import { ConvertOption, EditorState } from "../lib/types";
 
-export const editorText = `//// -- LEVEL 1
+const editorText = `//// -- LEVEL 1
 //// -- Tables and References
 
 // Creating tables
@@ -115,3 +96,26 @@ Ref: products.merchant_id > merchants.id // many-to-one
 //composite foreign key
 Ref: merchant_periods.(merchant_id, country_code) > merchants.(id, country_code)
 `;
+
+export const useEditor = create<EditorState>((set) => ({
+  importAs: options[2],
+  exportAs: options[1],
+  editorText: editorText,
+  previewText: editorText,
+  setExportFrom: (option: ConvertOption) =>
+    set((state) => {
+      state.exportAs = option;
+    }),
+  setImportFrom: (option: ConvertOption) =>
+    set((state) => {
+      state.importAs = option;
+    }),
+  setPreviewText: (text: string) =>
+    set((state) => {
+      state.previewText = text;
+    }),
+  setEditorText: (text: string) =>
+    set((state) => {
+      state.editorText = text;
+    }),
+}));

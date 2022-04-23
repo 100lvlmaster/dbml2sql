@@ -1,5 +1,5 @@
 import { exporter, importer } from "@dbml/core";
-import { ConverterOption, ConvertOption } from "./types";
+import { ConvertOption } from "./types";
 
 const toDbml = (val: string, option: ConvertOption): string => {
   return importer.import(val, option.value);
@@ -7,15 +7,16 @@ const toDbml = (val: string, option: ConvertOption): string => {
 
 ///
 export const convertOption = (
-  val: string,
-  options: ConverterOption
+  from: ConvertOption,
+  to: ConvertOption,
+  val: string
 ): string => {
   let result: string = val;
-  if (options.from.value != "dbml") {
-    result = toDbml(val, options.from);
+  if (from.value != "dbml") {
+    result = toDbml(val, from);
   }
   try {
-    result = exporter.export(val, options.to.value);
+    result = exporter.export(val, to.value);
   } catch (err) {
     console.log(`Error: ${err}`);
     return "";

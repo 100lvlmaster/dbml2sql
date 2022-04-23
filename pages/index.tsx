@@ -8,7 +8,13 @@ const Home: NextPage = () => {
   return (
     <Flex flexDir="column" minHeight="100vh" width="100vw">
       <NavBar />
-      <Flex height="100%" flexDir="row">
+      <Flex
+        height="100%"
+        flexDir="row"
+        alignItems={"stretch"}
+        justifyItems={"stretch"}
+        flexGrow={1}
+      >
         <Editor />
         <Preview />
       </Flex>
