@@ -1,7 +1,9 @@
 import { useToast } from "@chakra-ui/react";
+import { useEffect } from "react";
 import { Controlled as CodeMirror } from "react-codemirror2";
 import { convertOption } from "../lib/converter";
 import { useEditor } from "../store/editor";
+require("codemirror/mode/sql/sql");
 
 const Editor = () => {
   const toast = useToast();
@@ -14,6 +16,9 @@ const Editor = () => {
       state.setPreviewText,
     ]);
 
+  useEffect(() => {
+    handleOnChange(editorText);
+  }, []);
   ///
   ///
   ///
@@ -22,7 +27,6 @@ const Editor = () => {
     try {
       result = convertOption(importAs, exportAs, e);
     } catch (err) {
-      console.log(err);
       toast({
         title: (err as any).name as string,
         description: (err as any).message as string,
@@ -43,7 +47,8 @@ const Editor = () => {
       value={editorText}
       options={{
         lineWrapping: true,
-        mode: "json",
+        mode: "sql",
+
         lineNumbers: true,
       }}
       onBeforeChange={(editor, data, value) => {

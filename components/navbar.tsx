@@ -48,7 +48,6 @@ const NavBar = () => {
     try {
       result = convertOption(from, to, e);
     } catch (err) {
-      console.log(err);
       toast({
         title: (err as any).name as string,
         description: (err as any).message as string,

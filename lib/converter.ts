@@ -8,7 +8,6 @@ export const convertOption = (
 ): string => {
   const dbml = importer.import(val, from.value);
   const result = exporter.export(dbml, to.value);
-  console.log(result);
   return result;
 };
 

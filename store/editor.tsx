@@ -101,7 +101,7 @@ export const useEditor = create<EditorState>((set) => ({
   importAs: options[2],
   exportAs: options[1],
   editorText: editorText,
-  previewText: editorText,
+  previewText: "",
   setExportFrom: (option: ConvertOption) =>
     set((state) => {
       state.exportAs = option;

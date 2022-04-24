@@ -1,5 +1,6 @@
 import { Controlled as CodeMirror } from "react-codemirror2";
 import { useEditor } from "../store/editor";
+require("codemirror/mode/sql/sql");
 
 const Preview = () => {
   const [previewText, exportAs] = useEditor((state) => [
@@ -11,7 +12,7 @@ const Preview = () => {
       value={previewText}
       options={{
         lineWrapping: true,
-        mode: exportAs.value,
+        mode: "sql",
         lineNumbers: true,
         readOnly: true,
       }}
