@@ -6,12 +6,18 @@ export const convertOption = (
   to: ConvertOption,
   val: string
 ): string => {
-  console.log(from);
-  console.log(to);
-  let result: string = val;
-  if (from.value != "dbml") {
-    result = importer.import(val, from.value);
-  }
-  result = exporter.export(val, to.value);
+  const dbml = importer.import(val, from.value);
+  const result = exporter.export(dbml, to.value);
+  console.log(result);
   return result;
 };
+
+/**
+ * Importer
+ * - Converts anything to dbml
+ */
+
+/**
+ * Exporter
+ * - Converts dbml to anything
+ */

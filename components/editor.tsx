@@ -41,7 +41,11 @@ const Editor = () => {
   return (
     <CodeMirror
       value={editorText}
-      options={{ lineWrapping: true, mode: importAs.value, lineNumbers: true }}
+      options={{
+        lineWrapping: true,
+        mode: "json",
+        lineNumbers: true,
+      }}
       onBeforeChange={(editor, data, value) => {
         handleOnChange(value);
       }}
