@@ -3,7 +3,7 @@ import { useEffect } from "react";
 import { Controlled as CodeMirror } from "react-codemirror2";
 import { convertOption } from "../lib/converter";
 import { useEditor } from "../store/editor";
-require("codemirror/mode/sql/sql");
+// const sql = require("codemirror/mode/sql/sql");
 
 const Editor = () => {
   const toast = useToast();

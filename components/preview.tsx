@@ -1,6 +1,6 @@
 import { Controlled as CodeMirror } from "react-codemirror2";
 import { useEditor } from "../store/editor";
-require("codemirror/mode/sql/sql");
+// const sql = require("codemirror/mode/sql/sql");
 
 const Preview = () => {
   const [previewText, exportAs] = useEditor((state) => [
