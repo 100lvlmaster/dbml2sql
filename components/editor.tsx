@@ -23,6 +23,7 @@ const Editor = () => {
   ///
   ///
   const handleOnChange = (e: string) => {
+    setEditorText(e);
     let result;
     try {
       result = convertOption(importAs, exportAs, e);
