@@ -21,8 +21,17 @@ a {
   width: 100%;
   flex-grow: 1;
 }
-
+.CodeMirror-gutter {
+  color: white;
+  background-color: #1b202b;
+}
+.CodeMirror-linenumbers {
+  color: white;
+  background-color: #1b202b;
+}
 .CodeMirror {
+  background-color: #1b202b;
+  color: white;
   min-height: 100%;
   overflow-y: scroll;
   scroll-behavior: smooth;
